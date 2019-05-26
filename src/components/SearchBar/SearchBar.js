@@ -18,10 +18,10 @@ class SearchBar extends React.Component {
       <div className="search-bar-root">
         <span>Unsplash Gallery</span>
         <form onSubmit={this.onFormSubmit}>
-          <label>search icon placeholder</label>
+          <label>icon</label>
           <input
             type="text"
-            placeholder="Search images"
+            placeholder="Search photos"
             value={this.state.term}
             onChange={event => this.setState({ term: event.target.value })}
           />
