@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Image from '../Image';
 import './Gallery.scss';
 
 class Gallery extends React.Component {
@@ -24,8 +25,8 @@ class Gallery extends React.Component {
   render() {
     return (
       <div className="gallery-root">
-        Images count: {this.state.images.length}
-    </div>
+        {this.state.images.map(dto => <Image key={dto.id} dto={dto} /> )}
+      </div>
     );
   }
 }
