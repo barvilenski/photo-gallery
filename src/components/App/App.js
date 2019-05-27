@@ -6,7 +6,7 @@ import './App.scss';
 class App extends React.Component {
   constructor() {
     super();
-    this.state = { searchTerm: '' };
+    this.state = { searchTerm: 'view' };
   }
 
   render() {

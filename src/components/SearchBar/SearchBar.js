@@ -16,9 +16,9 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className="search-bar-root">
-        <span>Unsplash Gallery</span>
+        <i className="logo-icon fas fa-camera"></i>
         <form onSubmit={this.onFormSubmit}>
-          <label>icon</label>
+        <i className="search-icon fas fa-search"></i>
           <input
             type="text"
             placeholder="Search photos"

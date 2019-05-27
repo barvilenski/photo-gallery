@@ -10,6 +10,10 @@ class Gallery extends React.Component {
     this.state = { images: [] };
   }
 
+  componentDidMount() {
+    this.getImages();
+  }
+
   componentDidUpdate() {
     this.getImages();
   }

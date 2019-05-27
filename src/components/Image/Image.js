@@ -11,11 +11,19 @@ class Image extends React.Component {
 
   componentDidMount() {
     this.imageRef.current.addEventListener('load', this.setSpans);
+    window.addEventListener('resize', this.setSpans);
+    window.addEventListener('orientationChange', this.setSpans);
+  }
+
+  componentWillUnmount() {
+    this.imageRef.current.removeEventListener('load', this.setSpans);
+    window.removeEventListener('resize', this.setSpans);
+    window.removeEventListener('orientationChange', this.setSpans);
   }
 
   setSpans() {
     const height = this.imageRef.current.clientHeight;
-    const spans = Math.ceil(height / 10);
+    const spans = Math.ceil(height / 10) + 1;
     this.setState({ spans });
   }
 
