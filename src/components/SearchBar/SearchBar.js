@@ -5,7 +5,7 @@ class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.onFormSubmit = this.onFormSubmit.bind(this);
-    this.state = { term: this.props.term };
+    this.state = { term: '' };
   }
 
   onFormSubmit(event) {

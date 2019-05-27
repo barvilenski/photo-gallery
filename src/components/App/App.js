@@ -12,7 +12,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="app-root">
-        <SearchBar term={this.state.searchTerm} onSubmit={term => this.setState({ searchTerm: term })} />
+        <SearchBar onSubmit={term => this.setState({ searchTerm: term })} />
         <Gallery searchTerm={this.state.searchTerm} />
       </div>
     );
