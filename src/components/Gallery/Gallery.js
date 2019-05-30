@@ -14,14 +14,21 @@ class Gallery extends React.Component {
     this.getImages();
   }
 
-  componentDidUpdate() {
-    this.getImages();
+  componentDidUpdate(prevProps) {
+    if (this.props.searchTerm !== prevProps.searchTerm) {
+      this.getImages();
+    }
   }
 
   async getImages() {
     const response = await axios.get('https://api.unsplash.com/search/photos', {
-      params: { query: this.props.searchTerm },
-      headers: { Authorization: 'Client-ID 09dd98b98246f12396ee47bd815221038330fb0fbcf70f499aecc775d74d29f4' }
+      params: {
+        query: this.props.searchTerm,
+        per_page: 30
+      },
+      headers: {
+        Authorization: 'Client-ID 09dd98b98246f12396ee47bd815221038330fb0fbcf70f499aecc775d74d29f4'
+      }
     });
     this.setState({ images: response.data.results });
   }
